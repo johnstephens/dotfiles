@@ -12,7 +12,6 @@ fi
 
 # Customize to your needs...
 
-alias cat='nocorrect cat'
 alias mv='nocorrect mv'
 alias rm='nocorrect rm'
 alias vi='mvim'
