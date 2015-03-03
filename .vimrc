@@ -1,5 +1,5 @@
 ""  ------------------------
-""  BASE
+""  #BASE
 ""  ------------------------
 
 set nocompatible                " choose no compatibility with legacy vi
@@ -20,7 +20,7 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 
 
 ""  ------------------------
-""  Whitespace
+""  #WHITESPACE
 ""  ------------------------
 
 set nowrap                      " don't wrap lines
@@ -33,7 +33,7 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 
 
 ""  ------------------------
-""  Appearance
+""  #APPEARANCE
 ""  ------------------------
 
 colorscheme molokai             " Set color scheme
@@ -44,10 +44,10 @@ set colorcolumn=80
 set wrap                        " Wrap lines
 set linebreak
 set showbreak=…
-"set textwidth=72                " Document width
-""set formatoptions=qrn1          " Do not know
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%81v.\+/
+" set textwidth=72                " Document width
+" set formatoptions=qrn1          " Do not know
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%81v.\+/
 set guifont=Monaco:h14          " Set display font
 set list
 set nu                          " Add line numbers
@@ -59,7 +59,7 @@ set listchars+=trail:·          " Show trailing spaces as dots
 
 
 ""  ------------------------
-""  Searching
+""  #SEARCHING
 ""  ------------------------
 
 set hlsearch                    " highlight matches
@@ -72,17 +72,7 @@ set smartcase                   " ... unless they contain at least one capital l
 
 
 ""  ------------------------
-""  Plugins
-""  ------------------------
-
-execute pathogen#infect()
-
-
-
-
-
-""  ------------------------
-""  Filetypes
+""  #FILETYPES
 ""  ------------------------
 
 au BufNewFile,BufRead *.txp set filetype=html
@@ -92,7 +82,7 @@ au BufNewFile,BufRead *.txp set filetype=html
 
 
 ""  ------------------------
-""  Mappings
+""  #MAPPINGS
 ""  ------------------------
 
 "" Use Vim motions: Disable mouse and arrow keys
@@ -123,7 +113,7 @@ let mapleader = ","
 "" Close open XML tags using ,.
 imap <leader>. </<C-X><C-O>
 
-" Type ,, to alternate between files
+"" Type ,, to alternate between files
 nnoremap <leader><leader> <c-^>
 
 
@@ -131,7 +121,17 @@ nnoremap <leader><leader> <c-^>
 
 
 ""  ------------------------
-""  VMath
+""  #PLUGINS
+""  ------------------------
+
+execute pathogen#infect()
+
+
+
+
+
+""  ------------------------
+""  #VMATH
 ""  ------------------------
 
 vmap <expr>  ++  VMATH_YankAndAnalyse()
@@ -142,7 +142,7 @@ nmap         ++  vip++
 
 
 ""  ------------------------
-""  Syntastic
+""  #SYNTASTIC
 ""  ------------------------
 
 set statusline+=%#warningmsg#
@@ -161,7 +161,7 @@ let g:syntastic_sass_checkers=[ 'sass', 'sassc' ]
 
 
 ""  ------------------------
-""  Airline
+""  #AIRLINE
 ""  ------------------------
 
 if !exists('g:airline_symbols')
