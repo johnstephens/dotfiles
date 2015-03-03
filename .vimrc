@@ -1,6 +1,7 @@
-"""
-"" Base
-"""
+""  ------------------------
+""  BASE
+""  ------------------------
+
 set nocompatible                " choose no compatibility with legacy vi
 syntax enable
 set encoding=utf-8
@@ -14,37 +15,32 @@ endif
 "" Quickopen vimrc
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
-"""
-"" Whitespace
-"""
+
+
+
+
+""  ------------------------
+""  Whitespace
+""  ------------------------
+
 set nowrap                      " don't wrap lines
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
-"""
-"" Searching
-"""
-set hlsearch                    " highlight matches
-set incsearch                   " incremental searching
-set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
 
-"""
-"" Plugins
-"""
-execute pathogen#infect()
 
-"""
-"" Appearance
-"""
+
+
+""  ------------------------
+""  Appearance
+""  ------------------------
+
 colorscheme molokai             " Set color scheme
 " set columns=84
 set foldcolumn=12
 set colorcolumn=80
 " autocmd VimResized * if (&columns > 84) | set columns=84 | endif
-
-
 set wrap                        " Wrap lines
 set linebreak
 set showbreak=…
@@ -58,15 +54,46 @@ set nu                          " Add line numbers
 set listchars=tab:▸\ ,eol:¬     " Display tabs and line endings like a Mac
 set listchars+=trail:·          " Show trailing spaces as dots
 
-"""
-"" Filetypes
-"""
+
+
+
+
+""  ------------------------
+""  Searching
+""  ------------------------
+
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+
+
+
+
+
+""  ------------------------
+""  Plugins
+""  ------------------------
+
+execute pathogen#infect()
+
+
+
+
+
+""  ------------------------
+""  Filetypes
+""  ------------------------
 
 au BufNewFile,BufRead *.txp set filetype=html
 
-"""
-"" Mappings
-"""
+
+
+
+
+""  ------------------------
+""  Mappings
+""  ------------------------
 
 "" Use Vim motions: Disable mouse and arrow keys
 set mouse=
@@ -81,22 +108,42 @@ nnoremap <Down>  <NOP>
 
 "" Use spacebar to center current line in editor
 nmap <space> zz
+
 "" Automatically center search results in editor
+
 nmap n nzz
 nmap N Nzz
 
 "" Let me use semicolon to enter command mode
 nnoremap ; :
+
 "" Use comma as <leader> key instead of backslash
 let mapleader = ","
+
 "" Close open XML tags using ,.
 imap <leader>. </<C-X><C-O>
+
 " Type ,, to alternate between files
 nnoremap <leader><leader> <c-^>
 
-"""
-"" Syntastic
-"""
+
+
+
+
+""  ------------------------
+""  VMath
+""  ------------------------
+
+vmap <expr>  ++  VMATH_YankAndAnalyse()
+nmap         ++  vip++
+
+
+
+
+
+""  ------------------------
+""  Syntastic
+""  ------------------------
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -109,9 +156,13 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_js_checkers=[ 'jshint' ]
 let g:syntastic_sass_checkers=[ 'sass', 'sassc' ]
 
-"""
-"" Airline
-"""
+
+
+
+
+""  ------------------------
+""  Airline
+""  ------------------------
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
